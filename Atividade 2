@@ -1,0 +1,52 @@
+<?php
+
+// Declaração de variáveis
+$nome_livro = "";
+$tipo_usuario = "";
+$prazo_devolucao = "";
+
+// Solicita ao usuário as informações necessárias
+echo "Digite o nome do livro: ";
+$nome_livro = readline();
+
+echo "Digite o tipo de usuário (professor ou aluno): ";
+$tipo_usuario = readline();
+
+// Define o prazo de devolução
+if ($tipo_usuario == "professor") {
+  $prazo_devolucao = 10;
+} else {
+  $prazo_devolucao = 3;
+}
+
+// Imprime o recibo
+echo "
+Recibo de empréstimo
+
+Nome do livro: $nome_livro
+Tipo de usuário: $tipo_usuario
+Prazo de devolução: $prazo_devolucao dias
+";
+
+echo "Digite o nome do livro: ";
+$nome_livro = readline();
+
+echo "Digite o tipo de usuário (professor ou aluno): ";
+$tipo_usuario = readline();
+
+// Define o prazo de devolução
+if ($tipo_usuario == "professor") {
+  $prazo_devolucao = 10;
+} else {
+  $prazo_devolucao = 3;
+}
+
+// Imprime o recibo
+echo "
+Recibo de empréstimo
+
+Nome do livro: $nome_livro
+Tipo de usuário: $tipo_usuario
+Prazo de devolução: $prazo_devolucao dias
+";
+?>
