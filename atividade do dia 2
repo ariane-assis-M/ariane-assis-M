@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Área e perímetro de um retângulo</title>
+</head>
+<body>
+  <form action="calcular.php" method="post">
+    <label for="base">Base:</label>
+    <input type="text" id="base" name="base" required>
+
+    <label for="altura">Altura:</label>
+    <input type="text" id="altura" name="altura" required>
+
+    <input type="submit" value="Calcular">
+
+    
+  </form>
+</body>
+</html>
+
+//é ...ta faltando algo, e eu nao sei, sorry.
+
+<?php
+
+// Recebe os dados do formulário
+$base = $_POST['base'];
+$altura = $_POST['altura'];
+
+// Calcula a área e o perímetro
+$area = $base * $altura;
+$perimetro = 2 * ($base + $altura);
+
+// Exibe os resultados
+echo "Área: = $area";
+echo "<br>";
+echo "Perímetro: = $perimetro";
+
+?>
