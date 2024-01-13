@@ -1,0 +1,110 @@
+<?php
+
+// Declaração das variáveis
+$valor_hora = floatval(readline("Informe o valor da sua hora trabalhada: "));
+$horas_trabalhadas = intval(readline("Informe o número de horas trabalhadas no mês: "));
+
+// Cálculo do salário bruto
+$salario_bruto = $valor_hora * $horas_trabalhadas;
+
+// Cálculo dos descontos
+$desconto_ir = $salario_bruto * 0.11;
+$desconto_inss = $salario_bruto * 0.08;
+$desconto_sindicato = $salario_bruto * 0.05;
+
+// Cálculo do salário líquido
+$salario_liquido = $salario_bruto - $desconto_ir - $desconto_inss - $desconto_sindicato;
+
+// Impressão dos resultados
+echo "Salário bruto: R$", number_format($salario_bruto, 2), PHP_EOL;
+echo "Desconto INSS: R$", number_format($desconto_inss, 2), PHP_EOL;
+echo "Desconto Sindicato: R$", number_format($desconto_sindicato, 2), PHP_EOL;
+echo "Salário líquido: R$", number_format($salario_liquido, 2), PHP_EOL;
+
+// Tabela de resultados
+echo "+ Salário Bruto: R$", number_format($salario_bruto, 2), PHP_EOL;
+echo "- IR (11%): R$", number_format($desconto_ir, 2), PHP_EOL;
+echo "- INSS (8%): R$", number_format($desconto_inss, 2), PHP_EOL;
+echo "- Sindicato ( 5%): R$", number_format($desconto_sindicato, 2), PHP_EOL;
+echo "= Salário Líquido: R$", number_format($salario_liquido, 2), PHP_EOL;
+
+?>
+
+atividDE 2 
+
+<?php
+
+// Declaração das variáveis
+$area = floatval(readline("Informe o tamanho da área a ser pintada em metros quadrados: "));
+$cobertura = 1 / 6;
+$valor_lata = 80;
+$valor_galao = 25;
+
+// Cálculo da quantidade de tinta necessária
+$quantidade_tinta = $area * $cobertura;
+
+// Cálculo da quantidade de latas e galões necessários para pintar apenas com latas
+$quantidade_latas = floor($quantidade_tinta / 18);
+$quantidade_tinta_restante = $quantidade_tinta - $quantidade_latas * 18;
+
+// Cálculo do preço de comprar apenas com latas
+$preco_latas = $quantidade_latas * $valor_lata;
+
+// Cálculo da quantidade de galões e latas necessários para pintar apenas com galões
+$quantidade_galoes = floor($quantidade_tinta / 3.6);
+$quantidade_tinta_restante = $quantidade_tinta - $quantidade_galoes * 3.6;
+
+// Cálculo do preço de comprar apenas com galões
+$preco_galoes = $quantidade_galoes * $valor_galao;
+
+// Cálculo da quantidade de latas e galões necessários para pintar com a mistura
+$quantidade_latas_mistura = floor($quantidade_tinta_restante / 18);
+$quantidade_galoes_mistura = floor($quantidade_tinta_restante / 3.6);
+
+// Cálculo do preço de pintar com a mistura
+$preco_mistura = $quantidade_latas_mistura * $valor_lata + $quantidade_galoes_mistura * $valor_galao;
+
+// Impressão dos resultados
+echo "Área a ser pintada: $area m²" . PHP_EOL;
+echo "Cobertura da tinta: $cobertura litros/m²" . PHP_EOL;
+echo "Quantidade de tinta necessária: $quantidade_tinta litros" . PHP_EOL;
+
+echo "Comprar apenas latas:" . PHP_EOL;
+echo "Quantidade de latas: $quantidade_latas" . PHP_EOL;
+echo "Preço: R$ $preco_latas" . PHP_EOL;
+
+echo "Comprar apenas galões:" . PHP_EOL;
+echo "Quantidade de galões: $quantidade_galoes" . PHP_EOL;
+echo "Preço: R$ $preco_galoes" . PHP_EOL;
+
+echo "Misturar latas e galões:" . PHP_EOL;
+echo "Quantidade de latas: $quantidade_latas_mistura" . PHP_EOL;
+echo "Quantidade de galões: $quantidade_galoes_mistura" . PHP_EOL;
+echo "Preço: R$ $preco_mistura" . PHP_EOL;
+
+?>
+
+ATIVIDADE 3
+
+<?php
+
+// Declaração das variáveis
+$notas = [];
+
+// Solicitação das notas
+for ($i = 1; $i <= 3; $i++) {
+  $nota = floatval(readline("Informe a nota $i: "));
+  $notas[] = $nota;
+}
+
+// Cálculo da média final
+$media_final = array_sum($notas) / count($notas);
+
+// Verificação da aprovação ou reprovação
+$situacao = ($media_final >= 6) ? "Aprovado" : "Reprovado";
+
+// Exibição dos resultados
+echo "Média final: " . number_format($media_final, 2) . PHP_EOL;
+echo "Situação: " . $situacao . PHP_EOL;
+
+?>
